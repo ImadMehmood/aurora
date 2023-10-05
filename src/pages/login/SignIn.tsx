@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
-import { eye, logo } from "../../assets";
+import { bgsticker, bgstickerb, eye, logo } from "../../assets";
 import { Button } from "@nextui-org/react";
 
 const SignIn: React.FC = () => {
@@ -29,10 +29,13 @@ const SignIn: React.FC = () => {
   };
 
   return (
-    <div className="h-screen flex justify-center items-center px-3 scale-95">
-      <div className="bg-red-200 max-w-[700px] w-full flex flex-col gap-12 shadow-2xl items-center justify-center px-8 sm:px-20 py-12">
+    <div className="h-screen relative bg-bodygray flex justify-center items-center px-3 scale-100 ">
+      <img src={bgsticker} alt="bgsticker" className="absolute top-0 left-0" />
+      <img src={bgstickerb} alt="bgsticker" className="absolute bottom-0 right-0" />
+      <img src={bgsticker} alt="bgsticker" className="absolute top-0 right-0 w-20 h-20" />
+      <div className="bg-white max-w-[700px] w-full flex flex-col gap-12 sm:scale-90 items-center justify-center px-8 sm:px-20 py-12">
         <img src={logo} alt="logo" />
-
+        <img src={bgsticker} alt="bgsticker" className="absolute top-0 -right-[12%] w-20 h-20" />
         <div className="flex flex-col items-center justify-center gap-1">
           <h1 className="text-4xl font-bold">Sign In</h1>
           <p className="SignInP text-center w-full">Let’s Build Aurora Smart Assistant</p>
