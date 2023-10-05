@@ -26,7 +26,7 @@ const SignIn: React.FC = () => {
   };
 
   return (
-    <div className="h-screen flex justify-center items-center px-3">
+    <div className="h-screen flex justify-center items-center px-3 scale-95">
       <div className="bg-red-200 max-w-[700px] w-full flex flex-col gap-12 shadow-2xl items-center justify-center px-8 sm:px-20 py-12">
         <img src={logo} alt="logo" />
 
@@ -38,6 +38,7 @@ const SignIn: React.FC = () => {
         <form className="flex flex-col gap-1 justify-start items-start max-w-[500px] w-full" onSubmit={handleSubmit}>
           <p className="py-2">E-mail Or Phone Number</p>
           <input
+          autoFocus
             type="text"
             placeholder="Email or phone number"
             value={emailOrPhone}
