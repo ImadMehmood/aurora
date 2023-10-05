@@ -1,9 +1,11 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { eye, logo } from "../../assets";
+import { Button } from "@nextui-org/react";
 
 const SignIn: React.FC = () => {
   const [emailOrPhone, setEmailOrPhone] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [loading , setLoading] = useState<boolean>(false)
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
 
   const handleEmailOrPhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -20,6 +22,7 @@ const SignIn: React.FC = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true)
     // Add your form submission logic here
     console.log("Email/Phone:", emailOrPhone);
     console.log("Password:", password);
@@ -63,9 +66,12 @@ const SignIn: React.FC = () => {
             </button>
           </div>
           <p className="text-primary pb-8 ml-auto">Forgot Password?</p>
-          <button type="submit" className="bg-primary py-2 text-lg w-full rounded-[100px] text-white p-2  cursor-pointer hover:bg-blue-700">
+          <Button
+          
+          isLoading = {loading}
+           type="submit" className="bg-primary py-2 text-lg w-full rounded-[100px] text-white p-2  cursor-pointer hover:bg-blue-700">
             Sign In
-          </button>
+          </Button>
         </form>
       </div>
     </div>
