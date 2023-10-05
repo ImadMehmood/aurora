@@ -29,7 +29,7 @@ const SignIn: React.FC = () => {
   };
 
   return (
-    <div className="h-screen relative bg-bodygray flex justify-center items-center px-3 scale-100 ">
+    <div className="h-screen relative bg-bodygray flex justify-center items-center px-3 ">
       <img src={bgsticker} alt="bgsticker" className="absolute top-0 left-0" />
       <img src={bgstickerb} alt="bgsticker" className="absolute bottom-0 right-0" />
       <img src={bgsticker} alt="bgsticker" className="absolute top-0 right-0 w-20 h-20" />

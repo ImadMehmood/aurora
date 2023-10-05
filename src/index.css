@@ -12,3 +12,8 @@
 border: 1px solid var(--light-version-divider-color, #F5F5F6);
 background: var(--light-version-whit-color, #FFF);
 }
+
+html,
+body{
+  overflow-x: hidden;
+}
