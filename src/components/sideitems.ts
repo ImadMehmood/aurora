@@ -8,7 +8,7 @@ export const menu = [
             {
                 id: 1,
                 title: "Server Dashboard",
-                url: "/",
+                url: "/admin/dashboard",
                 icon: icon1
             },
             {

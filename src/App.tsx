@@ -33,7 +33,7 @@ function App() {
       ],
     },
     {
-      path: "/login",
+      path: "/",
       element: <SignIn />
     },
   ]);

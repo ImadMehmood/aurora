@@ -51,38 +51,3 @@ background: var(--light-version-whit-color, #FFF);
   width: 100%;
 }
 
-.menu {
-  .item {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-
-    .title {
-      text-transform: uppercase;
-
-      @include lg{
-        display: none;
-      }
-    }
-
-    .listItem {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px;
-      border-radius: 5px;
-
-      &:hover {
-        background-color: #E4F0F6;
-        color: #1E80B4;
-      }
-
-      .listItemTitle{
-        @include lg{
-          display: none;
-        }
-      }
-    }
-  }
-}
