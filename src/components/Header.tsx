@@ -11,10 +11,23 @@ import {
   DropdownTrigger,
   Input,
 } from "@nextui-org/react";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 
 const MainNavbar: React.FC = () => {
   // const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
+  const navigate = useNavigate();
+
+   const hadleLogout = () =>{
+          navigate("/")
+          toast(
+            "You have been logged out",
+            {
+              duration: 6000,
+            }
+          );
+   }
 
   return (
     <div className="bg-white w-full h-full flex justify-between items-center py-2 px-12 ">
@@ -92,7 +105,7 @@ const MainNavbar: React.FC = () => {
               <div className="flex justify-start items-center gap-2">
                 <img src={logout} alt="logout" className="w-5" />
 
-                <p className=" ">Log Out</p>
+                <div onClick={(e) => {e.stopPropagation(); hadleLogout()}} className=" ">Log Out</div>
               </div>
             </DropdownItem>
           </DropdownMenu>
