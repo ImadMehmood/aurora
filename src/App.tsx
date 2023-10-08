@@ -3,6 +3,7 @@ import SignIn from "./pages/login/SignIn";
 import ServerDashboard from "./pages/dashboard/ServerDashboard";
 import Menu from "./components/Menu";
 import MainNavbar from "./components/Header";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const Layout = () => {
@@ -34,11 +35,16 @@ function App() {
     },
     {
       path: "/",
-      element: <SignIn />
+      element: <SignIn />,
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <div>
+      <Toaster />
+      <RouterProvider router={router} />;
+    </div>
+  );
 }
 
 export default App;

@@ -2,8 +2,13 @@ import React, { useState, ChangeEvent, FormEvent } from "react";
 import { bgsticker, bgstickerb, eye, logo } from "../../assets";
 import { Button } from "@nextui-org/react";
 import axios from "axios";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const SignIn: React.FC = () => {
+
+
+  const navigate = useNavigate();
 
   const [loading, setLoading] = useState<boolean>(false)
   const [formdata, setFormdata] = useState<{ username: string, password: string }>({
@@ -28,23 +33,27 @@ const handleFormChange = (e:ChangeEvent<HTMLInputElement>) =>{
   const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true)
-    console.log(formdata);
     
     const response = await axios.post('http://52.118.148.183/admins/token' , formdata ,{
       headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
-          'accept' : 'application/json'
       }})
-    console.log(response);
+
     setLoading(false)
+    if (response?.status == 200){
+      
+      toast.success('Signed In')
+       return navigate("/admin/dashboard")
+    }
+    else{
+      toast.error('Unauthorized Credentials')
+    }
     
-
-
-
   };
 
   return (
     <div className="h-screen relative bg-bodygray flex justify-center items-center px-3 ">
+         
       <img src={bgsticker} alt="bgsticker" className="absolute top-0 left-0" />
       <img src={bgstickerb} alt="bgsticker" className="absolute bottom-0 right-0" />
       <img src={bgsticker} alt="bgsticker" className="absolute top-0 right-0 w-20 h-20" />

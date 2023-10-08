@@ -15,11 +15,13 @@ import icon6 from "./images/6.svg"
 import icon7 from "./images/7.svg"
 import icon8 from "./images/8.svg"
 import icon9 from "./images/9.svg"
+import setting1 from "./images/setting1.svg"
 
 
 
 
 export {
+    setting1,
     logo,
     eye,
     bgsticker,

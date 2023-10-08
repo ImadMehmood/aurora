@@ -37,8 +37,8 @@ background: var(--light-version-whit-color, #FFF);
 }
 
 .menuContainer {
-  width: 250px;
- 
+  width: 300px;
+  height: 100%;
  
 
   @include lg{
@@ -48,6 +48,7 @@ background: var(--light-version-whit-color, #FFF);
 
 .contentContainer {
   padding: 5px 20px;
+  height: 100%;
   width: 100%;
 }
 

@@ -1,4 +1,4 @@
-import { icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8, icon9 } from "../assets";
+import { icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8, icon9, setting1 } from "../assets";
 
 export const menu = [
     {
@@ -36,7 +36,7 @@ export const menu = [
                 icon: icon4
             },
             {
-                id: 3,
+                id: 8,
                 title: "Monitoring & Alerts ",
                 url: "/orders",
                 icon: icon5
@@ -69,7 +69,29 @@ export const menu = [
                 id: 3,
                 title: "Account Settings",
                 url: "/",
-                icon: icon9
+                icon: icon9,
+                icon1: setting1,
+
+                nestedlist:[
+                 {
+                    id:1,
+                    title: "Profile Setting",
+                    url:"/",
+
+                 },
+                 {
+                    id:1,
+                    title: "General Setting",
+                    url:"/",
+
+                 },
+                 {
+                    id:1,
+                    title: "Change Password",
+                    url:"/",
+
+                 },
+                ]
             },
 
         ],
