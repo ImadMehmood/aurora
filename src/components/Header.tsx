@@ -14,7 +14,7 @@ import {
 
 
 const MainNavbar: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
+  // const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
 
   return (
     <div className="bg-white w-full h-full flex justify-between items-center py-2 px-12 ">
