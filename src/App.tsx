@@ -23,11 +23,11 @@ function App() {
 
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/admin",
       element: <Layout />,
       children: [
         {
-          path: "/dashboard",
+          path: "/admin/dashboard",
           element: <ServerDashboard />,
         },
       ],
