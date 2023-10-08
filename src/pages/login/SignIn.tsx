@@ -1,31 +1,46 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { bgsticker, bgstickerb, eye, logo } from "../../assets";
 import { Button } from "@nextui-org/react";
+import axios from "axios";
 
 const SignIn: React.FC = () => {
-  const [emailOrPhone, setEmailOrPhone] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [loading , setLoading] = useState<boolean>(false)
+
+  const [loading, setLoading] = useState<boolean>(false)
+  const [formdata, setFormdata] = useState<{ username: string, password: string }>({
+    username: '',
+    password: ""
+  })
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
 
-  const handleEmailOrPhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setEmailOrPhone(e.target.value);
-  };
+const handleFormChange = (e:ChangeEvent<HTMLInputElement>) =>{
+  const {name, value} = e.target
+  setFormdata((prevData) =>({
+    ...prevData,
+    [name]: value
+  }))
+};
 
-  const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value);
-  };
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true)
-    // Add your form submission logic here
-    console.log("Email/Phone:", emailOrPhone);
-    console.log("Password:", password);
+    console.log(formdata);
+    
+    const response = await axios.post('http://52.118.148.183/admins/token' , formdata ,{
+      headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'accept' : 'application/json'
+      }})
+    console.log(response);
+    setLoading(false)
+    
+
+
+
   };
 
   return (
@@ -44,11 +59,13 @@ const SignIn: React.FC = () => {
         <form className="flex flex-col gap-1 justify-start items-start max-w-[500px] w-full" onSubmit={handleSubmit}>
           <p className="py-2">E-mail Or Phone Number</p>
           <input
-          autoFocus
+            autoFocus
             type="text"
+            name="username"
             placeholder="Email or phone number"
-            value={emailOrPhone}
-            onChange={handleEmailOrPhoneChange}
+            value={formdata.username}
+            onChange={handleFormChange}
+
             className="inputSignIn px-4 py-4 outline-primary w-full"
           />
           <p className="py-2">Password</p>
@@ -56,8 +73,10 @@ const SignIn: React.FC = () => {
             <input
               type={isPasswordVisible ? "text" : "password"}
               placeholder="Password"
-              value={password}
-              onChange={handlePasswordChange}
+              name="password"
+              value={formdata.password}
+              onChange={handleFormChange}
+
               className="inputSignIn px-4 py-4 outline-primary w-full"
             />
             <button
@@ -65,14 +84,14 @@ const SignIn: React.FC = () => {
               onClick={togglePasswordVisibility}
               className="absolute right-8 top-4 cursor-pointer"
             >
-              {isPasswordVisible ? <img src={eye} className="w-6"/> :<img src={eye} className="w-6" />}
+              {isPasswordVisible ? <img src={eye} className="w-6" /> : <img src={eye} className="w-6" />}
             </button>
           </div>
           <p className="text-primary pb-8 ml-auto">Forgot Password?</p>
           <Button
-          
-          isLoading = {loading}
-           type="submit" className="bg-primary py-2 text-lg w-full rounded-[100px] text-white p-2  cursor-pointer hover:bg-blue-700">
+
+            isLoading={loading}
+            type="submit" className="bg-primary py-5 text-lg w-full rounded-[100px] text-white  cursor-pointer hover:bg-blue-700">
             Sign In
           </Button>
         </form>

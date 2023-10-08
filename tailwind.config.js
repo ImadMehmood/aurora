@@ -23,8 +23,9 @@ export default {
       'silver': '#ecebff',
       'bubble-gum': '#ff77e9',
       'bermuda': '#78dcca',
-      "bodygray": "#F8F9FB"
-
+      "bodygray": "#F8F9FB",
+      "black" :'#000000',
+       "menue":"#616161",
     },
   },
   plugins: [nextui()],
