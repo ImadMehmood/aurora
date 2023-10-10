@@ -113,9 +113,11 @@ const Graphs: React.FC = () => {
     <div className="graphs w-full p-5">
       <h2 className="text-2xl font-medium">Our IBM Platform Users</h2>
        <div className=" flex justify-between items-center w-full">
-       <div style={{width:'600px'}}>
+       <div style={{width:'300px'}}>
+        <h2 className="text-2xl font-light">960 Total User</h2>
 
-         <PieChart width={500} height={400}>
+
+         <PieChart width={300} height={250}>
           <Pie
             dataKey="value"
             startAngle={180}
@@ -134,6 +136,16 @@ const Graphs: React.FC = () => {
           </Pie>
           {needle(value, data, cx, cy, iR, oR, "#A2A5AC")}
         </PieChart>
+        <div className="flex justify-between items-center w-full">
+        <div className="flex justify-between items-center w-full">
+          <p className="text-2xl font-medium" >70%</p>
+          <p className="text-2xl font-medium">30%</p>
+        </div>
+        </div>
+        <div className="flex justify-between items-center w-full">
+          <p className="text-xl font-light" >IBM </p>
+          <p className="text-xl font-light">OTHER</p>
+        </div>
        </div>
  
       <div style={{width: '600px' , height: '300px'}}>
