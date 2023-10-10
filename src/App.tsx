@@ -10,11 +10,11 @@ function App() {
     return (
       <div className="main">
         <MainNavbar />
-        <div className="container">
-          <div className="menuContainer w-full h-full">
+        <div className="container w-full h-full">
+          <div className="max-w-[300px] w-full">
             <Menu />
           </div>
-          <div className="ContentContainer">
+          <div className="w-full">
             <Outlet />
           </div>
         </div>

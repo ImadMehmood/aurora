@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { menu } from "./sideitems";
 import { useState } from "react";
 
@@ -10,7 +11,9 @@ const Menu: React.FC = () => {
     setID(id);
   };
   return (
-    <div className="bg-white  pt-4 cursor-pointer text-menue w-full">
+          <div className=" h-full">
+
+    <div className="bg-white  h-full pt-4 cursor-pointer text-menue ">
       {menu.map((item) => (
         <div className="item" key={item.id}>
           {item?.listItems?.map((listItem) => (
@@ -20,21 +23,24 @@ const Menu: React.FC = () => {
                   e.stopPropagation();
                   hanldeOpen(listItem?.id);
                 }}
-              >
+                >
+                <Link to={listItem?.url} className="w-full">
                 <div className="flex justify-start w-full bg-white items-center hover:bg-[#1E80B4]/10 gap-4 px-3 hover:text-[#1E80B4] py-4">
                   <img src={listItem?.icon} alt="" />
 
                   <h4 className="">{listItem?.title}</h4>
+                  
 
                   <img
                     src={listItem?.icon1}
                     className={`float-right ml-auto w-6 ${
                       showSetting == true && id == 3
-                        ? "rotate-180 transition-all"
-                        : ""
+                      ? "rotate-180 transition-all"
+                      : ""
                     }`}
-                  />
+                    />
                 </div>
+                    </Link>
               </div>
 
               {showSetting &&
@@ -59,6 +65,8 @@ const Menu: React.FC = () => {
         <p>2023 copyright. all rights reserved</p>
          </div>
     </div>
+          </div>
+
   );
 };
 

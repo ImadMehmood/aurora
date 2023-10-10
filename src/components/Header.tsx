@@ -16,7 +16,6 @@ import toast from "react-hot-toast";
 
 
 const MainNavbar: React.FC = () => {
-  // const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
   const navigate = useNavigate();
 
    const hadleLogout = () =>{
@@ -32,7 +31,7 @@ const MainNavbar: React.FC = () => {
   return (
     <div className="bg-white w-full h-full flex justify-between items-center py-2 px-12 ">
       <div className="h-full">
-        <img src={logo} alt="logo" className=" w-16 " />
+        <img src={logo} alt="logo" className=" w-16 object-cover object-center " />
       </div>
 
       <div className=" mr-[30%] flex justify-center items-center gap-12">
