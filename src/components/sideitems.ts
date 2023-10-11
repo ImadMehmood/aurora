@@ -68,7 +68,7 @@ export const menu = [
             {
                 id: 3,
                 title: "Account Settings",
-                url: "/",
+                url: "",
                 icon: icon9,
                 icon1: setting1,
 

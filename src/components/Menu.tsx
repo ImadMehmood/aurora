@@ -11,7 +11,7 @@ const Menu: React.FC = () => {
     setID(id);
   };
   return (
-          <div className=" h-full">
+          <div className=" h-screen">
 
     <div className="bg-white  h-full pt-4 cursor-pointer text-menue ">
       {menu.map((item) => (
@@ -24,14 +24,14 @@ const Menu: React.FC = () => {
                   hanldeOpen(listItem?.id);
                 }}
                 >
-                <Link to={listItem?.url} className="w-full">
-                <div className="flex justify-start w-full bg-white items-center hover:bg-[#1E80B4]/10 gap-4 px-3 hover:text-[#1E80B4] py-4">
+                 <div className="flex justify-start w-full bg-white items-center hover:bg-[#1E80B4]/10 gap-4 px-3 hover:text-[#1E80B4] py-4">
                   <img src={listItem?.icon} alt="" />
 
-                  <h4 className="">{listItem?.title}</h4>
+
+                  <Link to={listItem?.url} className="">{listItem?.title}</Link>
                   
 
-                  <img
+                   <img
                     src={listItem?.icon1}
                     className={`float-right ml-auto w-6 ${
                       showSetting == true && id == 3
@@ -40,7 +40,6 @@ const Menu: React.FC = () => {
                     }`}
                     />
                 </div>
-                    </Link>
               </div>
 
               {showSetting &&
