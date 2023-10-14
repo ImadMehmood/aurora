@@ -87,19 +87,7 @@ const Graphs: React.FC = () => {
   //   { name: "B", value: 30, color: "#81388C" },
   // ];
 
-  const data1 = {
-    labels: ["May 12", "May 14", "May 15", "May 16"],
-    datasets: [
-      {
-        label: "Dataset 1",
-        data: [8, 7.8, 3, 7],
-        borderColor: "#1E80B4",
-        backgroundColor: "#1E80B4",
-        tension: 0.5,
-      },
-    ],
-  };
-  console.log(dataMY);
+
   
 
   const options = {
