@@ -9,6 +9,7 @@ const ServerDashboard : React.FC = () => {
       <h2 className='text-2xl '>Secret Agent Consulting</h2>
       <NewUser />
       <Graphs />
+   
       
       </div>
   )
