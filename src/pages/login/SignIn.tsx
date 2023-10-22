@@ -34,7 +34,7 @@ const handleFormChange = (e:ChangeEvent<HTMLInputElement>) =>{
     e.preventDefault();
     setLoading(true)
     
-    const response = await axios.post('https://52.118.148.183/admins/token' , formdata ,{
+    const response = await axios.post('//52.118.148.183/admins/token' , formdata ,{
       headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
       }})
